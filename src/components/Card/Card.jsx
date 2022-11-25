@@ -5,7 +5,7 @@ import notFound from "../../images/pokemon-notfound.png";
 import Svg from "../Svg/Svg.jsx";
 import s from "./Card.module.css";
 import actionsCreators from "../../actions";
-import API from "../../api";
+import API from "../../api.js";
 
 const { getPokemons } = actionsCreators;
 
