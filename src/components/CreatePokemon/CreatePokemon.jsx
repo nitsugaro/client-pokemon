@@ -6,6 +6,7 @@ import ResultMessage from "../ResultMessage/ResultMessage.jsx";
 import createPokemon from "./createPokemon.js";
 import sRoot from "../../index.module.css";
 import s from "./CreatePokemon.module.css";
+import API from "../../api.js";
 
 const { getPokemons, getTypes, getUserPokemons } = actionsCreators;
 
@@ -78,7 +79,7 @@ export default function CreatePokemon() {
           "Por favor, introduce un ID con el formato correcto para verificar su existencia.",
       }));
 
-    const result = await fetch(`http://localhost:3001/pokemons/${id}`);
+    const result = await fetch(`${API}/pokemons/${id}`);
     const json = await result.json();
 
     let options = json.notFound

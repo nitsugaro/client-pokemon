@@ -6,6 +6,7 @@ import Card from "../Card/Card.jsx";
 import sRoot from "../../index.module.css";
 import s from "./Pokemons.module.css";
 import ResultMessage from "../ResultMessage/ResultMessage.jsx";
+import API from "../../api.js";
 
 const { getTypes, getUserPokemons, getPokemons } = actionsCreators;
 
@@ -57,7 +58,7 @@ export default function Pokemons() {
       if (inputs[key])
         data[key] = isNaN(+inputs[key]) ? inputs[key] : +inputs[key];
 
-    return fetch("http://localhost:3001/pokemons", {
+    return fetch(`${API}/pokemons`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -91,7 +92,7 @@ export default function Pokemons() {
       body: JSON.stringify({ email, password }),
     };
 
-    fetch(`http://localhost:3001/pokemons/${messageSettings.id}`, options)
+    fetch(`${API}/pokemons/${messageSettings.id}`, options)
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((res) => {
         dispatch(getPokemons());
