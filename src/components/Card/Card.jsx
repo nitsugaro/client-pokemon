@@ -38,7 +38,7 @@ export default function Card({
 
     if (choice === "pokemon") {
       fetch(
-        `${API}pokemons/admin?choice=${choice}&identificator=${id}`,
+        `${API}/pokemons/admin?choice=${choice}&identificator=${id}`,
         options
       )
         .then((res) => (res.ok ? res.json() : Promise.reject(res)))
