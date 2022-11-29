@@ -226,10 +226,10 @@
   }
 
   .logo {
-    left: calc(100vw - 300px);
+    left: calc(50vw - 100px);
     top: 20px;
     height: 100px;
-    width: 300px;
+    width: 200px;
   }
 
   .sub-container {
@@ -243,6 +243,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
   }
 
   .title {
