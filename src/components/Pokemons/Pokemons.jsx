@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import actionsCreators from "../../actions/index.js";
 import Form from "../Form/Form.jsx";
 import Card from "../Card/Card.jsx";
-import sRoot from "../../index.module.css";
 import s from "./Pokemons.module.css";
 import ResultMessage from "../ResultMessage/ResultMessage.jsx";
 import API from "../../api.js";
@@ -121,7 +120,7 @@ export default function Pokemons() {
 
   if (!isLogin || !pokemons?.length)
     return (
-      <div className={`${s["container-pokemons"]} ${sRoot["root-container"]}`}>
+      <div className={s["container-pokemons"]}>
         <h2 className={s["no-access-message"]}>
           {isLogin
             ? "No tenés pokemons creados..."
@@ -132,7 +131,7 @@ export default function Pokemons() {
     );
 
   return (
-    <div className={`${s["container-pokemons"]} ${sRoot["root-container"]}`}>
+    <div className={s["container-pokemons"]}>
       <div className={s["subcontainer-pokemons"]}>
         {pokemons?.map((p) => (
           <Card

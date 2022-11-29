@@ -4,7 +4,6 @@ import actionsCreators from "../../actions/index.js";
 import Form from "../Form/Form.jsx";
 import ResultMessage from "../ResultMessage/ResultMessage.jsx";
 import createPokemon from "./createPokemon.js";
-import sRoot from "../../index.module.css";
 import s from "./CreatePokemon.module.css";
 import API from "../../api.js";
 
@@ -103,7 +102,7 @@ export default function CreatePokemon() {
 
   if (!isLogin)
     return (
-      <div className={`${s["container-form"]} ${sRoot["root-container"]}`}>
+      <div className={s["container-form"]}>
         <div className={s.blur}></div>
         <h2 className={s["no-access-message"]}>
           Conectáte o creá una cuenta para crear Pokemons!
@@ -112,7 +111,7 @@ export default function CreatePokemon() {
     );
 
   return (
-    <div className={`${s["container-form"]} ${sRoot["root-container"]}`}>
+    <div className={s["container-form"]}>
       <div className={s.blur}></div>
       <Form
         handlerSubmitPokemon={handlerSubmitPokemon}
