@@ -65,6 +65,7 @@ export default function Home() {
   const handlerSubmit = (e) => {
     e.preventDefault();
 
+    dispatch(resetPokemons());
     dispatch(getPokemons(search));
   };
 
